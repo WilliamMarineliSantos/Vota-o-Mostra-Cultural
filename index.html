@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Mostra Cultural 2021</title>
+        <link rel="shortcut icon" href="img/favicon.ico" />
+        <meta charset="utf-8">
+    </head>
+
+
+    <body topmargin="55" leftmargin="440">
+        <center>
+            <img src="img/escola.png" alt="some text" width=40% height=40%>
+        </center>
+
+        <h1>Sexto1: <span id="res"></span></h1>
+        <h1>Sexto2: <span id="res2"></span></h1>
+        <h1>Setimo1: <span id="res3"></span></h1>
+        <h1>Setimo2: <span id="res4"></span></h1>
+        <h1>Oitavo: <span id="res5"></span></h1>
+        <h1>Nono: <span id="res6"></span></h1>
+        <h1>Primeiro: <span id="res7"></span></h1>
+        <h1>Segundo: <span id="res8"></span></h1>
+        <h1>Terceirão: <span id="res9"></span></h1>
+        
+        <script src="https://www.gstatic.com/firebasejs/6.4.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.4.2/firebase-database.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js" integrity="sha512-Wt1bJGtlnMtGP0dqNFH1xlkLBNpEodaiQ8ZN5JLA5wpc1sUlk/O5uuOMNgvzddzkpvZ9GLyYNa8w2s7rqiTk5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script>
+        //FIREBASE
+
+            const firebaseConfig = {
+                apiKey: "AIzaSyBQ8lQsY7UwMKW4XHLaQBJ0NxicR3NYGv0",
+                authDomain: "mostra-cultural.firebaseapp.com",
+                databaseURL: "https://mostra-cultural-default-rtdb.firebaseio.com",
+                projectId: "mostra-cultural",
+                storageBucket: "mostra-cultural.appspot.com",
+                messagingSenderId: "1098783002575",
+                appId: "1:1098783002575:web:e97ed577ad2bb1d33f0cba"
+            };
+
+            firebase.initializeApp(firebaseConfig);
+
+            var refCadastro1 = firebase.database().ref("Sexto1");
+            var refCadastro2 = firebase.database().ref("Sexto2");
+            var refCadastro3 = firebase.database().ref("Setimo1");
+            var refCadastro4 = firebase.database().ref("Setimo2");
+            var refCadastro5 = firebase.database().ref("Oitavo");
+            var refCadastro6 = firebase.database().ref("Nono");
+            var refCadastro7 = firebase.database().ref("Primeiro");
+            var refCadastro8 = firebase.database().ref("Segundo");
+            var refCadastro9 = firebase.database().ref("Terceirao");
+
+            function somarVetor(vetor) {
+                return vetor.reduce((prev, next) => parseInt(prev) + parseInt(next))
+            }
+
+            var sexto1;
+            var sexto2;
+            var setimo1; 
+            var setimo2; 
+            var oitavo; 
+            var nono; 
+            var primeiro; 
+            var segundo; 
+            var terceirao;  
+            const soma = [];
+            const soma2 = [];
+            const soma3 = [];
+            const soma4 = [];
+            const soma5 = [];
+            const soma6 = [];
+            const soma7 = [];
+            const soma8 = [];
+            const soma9 = [];
+            var result = 0;
+            var result2 = 0;
+            var result3 = 0;
+            var result4 = 0;
+            var result5 = 0;
+            var result6 = 0;
+            var result7 = 0;
+            var result8 = 0;
+            var result9 = 0;
+
+            refCadastro1.on("child_added", snap=>{
+
+                sexto1 = snap.child("Avaliação").val();
+
+                soma.push(sexto1);
+                
+                result = somarVetor(soma);
+
+                document.getElementById('res').innerHTML = result;
+                
+            });
+
+            refCadastro2.on("child_added", snap=>{
+
+                sexto2 = snap.child("Avaliação").val();
+
+                soma2.push(sexto2);
+
+                result2 = somarVetor(soma2);
+
+                document.getElementById('res2').innerHTML = result2;
+    
+            });
+            
+            refCadastro3.on("child_added", snap=>{
+
+                setimo1 = snap.child("Avaliação").val();
+
+                soma3.push(setimo1);
+
+                result3 = somarVetor(soma3);
+
+                document.getElementById('res3').innerHTML = result3;
+
+            });
+
+            refCadastro4.on("child_added", snap=>{
+
+                setimo2 = snap.child("Avaliação").val();
+
+                soma4.push(setimo2);
+
+                result4 = somarVetor(soma4);
+
+                document.getElementById('res4').innerHTML = result4;
+
+            });
+
+            refCadastro5.on("child_added", snap=>{
+
+                oitavo = snap.child("Avaliação").val();
+
+                soma5.push(oitavo);
+
+                result5 = somarVetor(soma5);
+
+                document.getElementById('res5').innerHTML = result5;
+
+            });
+
+            refCadastro6.on("child_added", snap=>{
+
+                nono = snap.child("Avaliação").val();
+
+                soma6.push(nono);
+
+                result6 = somarVetor(soma6);
+
+                document.getElementById('res6').innerHTML = result6;
+
+            });
+
+            refCadastro7.on("child_added", snap=>{
+
+                primeiro = snap.child("Avaliação").val();
+
+                soma7.push(primeiro);
+
+                result7 = somarVetor(soma7);
+
+                document.getElementById('res7').innerHTML = result7;
+
+            });
+
+            refCadastro8.on("child_added", snap=>{
+
+                segundo = snap.child("Avaliação").val();
+
+                soma8.push(segundo);
+
+                result8 = somarVetor(soma8);
+
+                document.getElementById('res8').innerHTML = result8;
+
+            });
+
+            refCadastro9.on("child_added", snap=>{
+
+                terceirao = snap.child("Avaliação").val();
+
+                soma9.push(terceirao);
+
+                result9 = somarVetor(soma9);
+
+                document.getElementById('res9').innerHTML = result9;
+
+            });
+        </script>
+    </body>
+</html>
