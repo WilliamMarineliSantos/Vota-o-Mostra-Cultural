@@ -13,7 +13,8 @@ Foi muito importante a responsividade dos sites já que os usuarios entrariam ap
 
 O JavaScript presente em todo projeto fez não só o efeito da mudança de cor das estrelas mas também foi o responsável pelo armasenamento dos dados no Firebase;
 
-Esse projeto não  está estilisado com CSS  pois não é a versão final hospedada. Porem o backend final está atualisado;
+Esse projeto não  está estilisado com CSS  pois não é a versão final hospedada. Porem o backend final está atualisado. Acesse o link para ver a pagina principal estilizada;
+https://mostraculturalavalia.000webhostapp.com/index.html
 ## Hospedagem
 O site final foi hospedado na WebHostApp.com (é uma hospedagem gratuita).
 # Problemas não solucionados 
@@ -21,5 +22,7 @@ O site final foi hospedado na WebHostApp.com (é uma hospedagem gratuita).
 Por ser uma hospedagem gratuita muitas pessoas com internet propria do Chip não conseguiram acessar por problemas de  DNS;
 ## Ideia principal do grafico:
 A ideia principal do projeto era uma pagica de exibição dos votos com grafico porem evido ao desafio desomar com vetores essa parte foi abortada;
+## Calcular uma média:
+Seria ideal se antes dos valores serem jogados na pagina principal uma média fosse calculada para os valores não firem muito altos;
 ## Local mais adequado:
 Se os problemas acima fossem resolvdos conseguir um telão ou uma sala com antecendencia seria o ideal para a exibição;
